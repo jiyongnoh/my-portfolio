@@ -33,7 +33,7 @@ const NavContainer = styled.nav`
   width: 100vw;
   padding: 1rem;
 
-  border: 1px solid gray;
+  border-bottom: 1px solid gray;
 
   display: flex;
   justify-content: space-evenly;
@@ -59,7 +59,6 @@ const Tag = styled.span`
   font-size: 1.1rem;
   font-family: sans-serif;
 
-  color: black;
   font-weight: 600;
 
   transition: 0.3s;
