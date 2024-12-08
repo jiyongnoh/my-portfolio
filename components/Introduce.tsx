@@ -51,7 +51,7 @@ const Introduce = () => {
   );
 };
 
-const IntroContainer = styled.div`
+const IntroContainer = styled.section`
   width: 100vw;
   height: 100vh;
   background-color: black;

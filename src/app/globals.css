@@ -39,6 +39,16 @@ a {
   text-decoration: none;
 }
 
+.progress-bar {
+  position: fixed;
+  top: 7%;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: #ff0055;
+  transform-origin: 0%;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
