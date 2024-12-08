@@ -72,7 +72,7 @@ const About = () => {
                 borderRadius: "10px",
               }}
             >
-              {isOpen && <Descripion>노지용</Descripion>}
+              <Descripion>노지용</Descripion>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -138,7 +138,7 @@ const About = () => {
                 borderRadius: "10px",
               }}
             >
-              {isOpen2 && <Descripion>1995.05.23</Descripion>}
+              <Descripion>1995.05.23</Descripion>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -205,8 +205,8 @@ const About = () => {
                 borderRadius: "10px",
               }}
             >
-              {isOpen3 && <Descripion>010-7473-8485</Descripion>}
-              {isOpen3 && <Descripion>earthworm77@naver.com</Descripion>}
+              <Descripion>010-7473-8485</Descripion>
+              <Descripion>earthworm77@naver.com</Descripion>
             </motion.div>
           </motion.div>
         </motion.div>
