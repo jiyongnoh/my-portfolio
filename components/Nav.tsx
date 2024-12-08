@@ -1,16 +1,27 @@
 "use client";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Nav = () => {
   return (
     <NavContainer>
       <Title>{`노지용's Portfolio`}</Title>
       <TagContainer>
-        <Tag>Introduce</Tag>
-        <Tag>About me</Tag>
-        <Tag>Skill</Tag>
-        <Tag>Archiving</Tag>
-        <Tag>Project</Tag>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <Tag>Introduce</Tag>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <Tag>About me</Tag>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <Tag>Skill</Tag>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <Tag>Archiving</Tag>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <Tag>Project</Tag>
+        </motion.div>
       </TagContainer>
     </NavContainer>
   );
@@ -45,7 +56,7 @@ const TagContainer = styled.div`
 `;
 
 const Tag = styled.span`
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-family: sans-serif;
 
   color: black;
@@ -53,6 +64,8 @@ const Tag = styled.span`
 
   transition: 0.3s;
   cursor: pointer;
+
+  user-select: none;
 
   &:hover {
     color: #007aff;
