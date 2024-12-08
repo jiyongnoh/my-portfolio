@@ -8,10 +8,8 @@ const Main = styled.main`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-
-  gap: 2rem;
 `;
 
 export default Main;
