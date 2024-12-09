@@ -1,6 +1,5 @@
 "use client";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 const Archiving = () => {
   return (
@@ -32,26 +31,6 @@ const Title = styled.span`
   color: white;
 
   border-bottom: 1px solid gray;
-
-  user-select: none;
-`;
-
-const Subtitle = styled.span`
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: black;
-
-  border-bottom: 1px solid gray;
-
-  user-select: none;
-`;
-
-const Descripion = styled.span`
-  font-size: 1.3rem;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: black;
 
   user-select: none;
 `;
