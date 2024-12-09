@@ -41,7 +41,21 @@ const ExtraSkillArray = [
 const Skill = () => {
   return (
     <SkillContainer>
-      <Title>{`SKILLS`}</Title>
+      <Title>
+        <Image
+          src={"/clip.svg"}
+          alt={"clip"}
+          width={40}
+          height={40}
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+            cursor: "pointer",
+            opacity: "0.5",
+          }}
+        />
+        {`SKILLS`}
+      </Title>
       <JobContainer>
         {/* Front Job Card */}
         <JobCard>
@@ -243,14 +257,20 @@ const JobCard = styled.div`
 `;
 
 const Title = styled.span`
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0;
 
   font-size: 3rem;
   font-weight: bold;
   font-family: sans-serif;
-  color: black;
+  color: white;
 
   border-bottom: 1px solid gray;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.4rem;
 
   user-select: none;
 `;

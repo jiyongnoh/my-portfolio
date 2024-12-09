@@ -1,5 +1,7 @@
 "use client";
 import styled from "styled-components";
+import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -9,7 +11,20 @@ const Project = () => {
   const [isOpen3, setIsOpen3] = useState(false);
   return (
     <SkillContainer>
-      <Title>{`PROJECT`}</Title>
+      <Title>
+        <Image
+          src={"/clip.svg"}
+          alt={"clip"}
+          width={40}
+          height={40}
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+            cursor: "pointer",
+          }}
+        />
+        {`PROJECT`}
+      </Title>
       <InfoContainer>
         <motion.div
           layout
@@ -238,12 +253,20 @@ const InfoContainer = styled.div`
 `;
 
 const Title = styled.span`
+  padding: 0.5rem 0;
+
   font-size: 3rem;
   font-weight: bold;
   font-family: sans-serif;
   color: white;
 
   border-bottom: 1px solid gray;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.4rem;
 
   user-select: none;
 `;

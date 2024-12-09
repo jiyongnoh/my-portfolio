@@ -33,10 +33,10 @@ const Nav = () => {
             <Tag onClick={() => scrollToPosition(830)}>About me</Tag>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag onClick={() => scrollToPosition(1280)}>Skill</Tag>
+            <Tag onClick={() => scrollToPosition(1290)}>Skill</Tag>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag onClick={() => scrollToPosition(2627)}>Archiving</Tag>
+            <Tag onClick={() => scrollToPosition(2645)}>Archiving</Tag>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             <Tag onClick={() => scrollToPosition(4000)}>Project</Tag>
