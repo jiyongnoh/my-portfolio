@@ -1,17 +1,24 @@
 "use client";
 import styled from "styled-components";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
 
 const Nav = () => {
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress, scrollY } = useScroll();
+  const [isDark, setIsDark] = useState(false);
+
+  // 특정 위치에서 상태를 변경
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsDark(latest > 890); // 300px 이상 1000px 이하일 때 활성화
+  });
+
   return (
     <MasterContainer>
-      <NavContainer>
-        <Title>{`노지용's Portfolio`}</Title>
-        <TagContainer>
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag>Introduce</Tag>
-          </motion.div>
+      <NavContainer dark={isDark ? "true" : ""}>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <Title dark={isDark ? "true" : ""}>{`노지용's Portfolio`}</Title>
+        </motion.div>
+        <TagContainer dark={isDark ? "true" : ""}>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             <Tag>About me</Tag>
           </motion.div>
@@ -43,11 +50,12 @@ const MasterContainer = styled.div`
   align-items: center;
 `;
 
-const NavContainer = styled.nav`
+const NavContainer = styled.nav<{ dark?: string }>`
   width: 100vw;
   padding: 1.5rem;
 
-  background-color: rgb(255, 255, 255, 0.1);
+  background-color: ${(props) =>
+    props.dark ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0.01)"};
   border-bottom: 1px solid gray;
 
   display: flex;
@@ -55,28 +63,40 @@ const NavContainer = styled.nav`
   align-items: center;
 
   gap: 4rem;
+
+  transition: 0.3s;
 `;
 
-const Title = styled.span`
+const Title = styled.span<{ dark?: string }>`
   font-size: 1.5rem;
   font-weight: bold;
   font-family: sans-serif;
 
-  color: white;
+  color: ${(props) => (props.dark ? "black" : "white")};
+
+  cursor: pointer;
 
   user-select: none;
+
+  &:hover {
+    color: #007aff;
+  }
+
+  transition: 0.3s;
 `;
 
-const TagContainer = styled.div`
+const TagContainer = styled.div<{ dark?: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  color: ${(props) => (props.dark ? "black" : "white")};
+
+  transition: 0.3s;
 `;
 
 const Tag = styled.span`
-  color: white;
-
   font-size: 1.1rem;
   font-family: sans-serif;
   font-weight: 600;

@@ -41,7 +41,7 @@ a {
 
 .progress-bar {
   position: fixed;
-  top: 7%;
+  top: 0;
   left: 0;
   right: 0;
   height: 8px;
