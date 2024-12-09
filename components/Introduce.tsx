@@ -50,7 +50,7 @@ const Introduce = () => {
         transition={{ duration: 0.5, delay: 4 }}
       >
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-          <Button onClick={() => scrollToPosition(911)}>About Me</Button>
+          <Button onClick={() => scrollToPosition(830)}>About Me</Button>
         </motion.div>
       </motion.div>
     </IntroContainer>
