@@ -9,7 +9,7 @@ const Nav = () => {
 
   // 특정 위치에서 상태를 변경
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsDark(latest > 890); // 300px 이상 1000px 이하일 때 활성화
+    setIsDark(latest > 830); // 300px 이상 1000px 이하일 때 활성화
   });
 
   const scrollToPosition = (position: number) => {
@@ -30,13 +30,13 @@ const Nav = () => {
         </motion.div>
         <TagContainer dark={isDark ? "true" : ""}>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag onClick={() => scrollToPosition(911)}>About me</Tag>
+            <Tag onClick={() => scrollToPosition(830)}>About me</Tag>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag onClick={() => scrollToPosition(1360)}>Skill</Tag>
+            <Tag onClick={() => scrollToPosition(1280)}>Skill</Tag>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag onClick={() => scrollToPosition(2707)}>Archiving</Tag>
+            <Tag onClick={() => scrollToPosition(2627)}>Archiving</Tag>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             <Tag onClick={() => scrollToPosition(4000)}>Project</Tag>
