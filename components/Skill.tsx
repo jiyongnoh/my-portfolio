@@ -248,7 +248,7 @@ const Title = styled.span`
   font-size: 3rem;
   font-weight: bold;
   font-family: sans-serif;
-  color: white;
+  color: black;
 
   border-bottom: 1px solid gray;
 

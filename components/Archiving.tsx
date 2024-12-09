@@ -11,6 +11,7 @@ const Archiving = () => {
 
 const ArchivingContainer = styled.div`
   width: 100vw;
+  min-height: 100vh;
   background-color: #212529;
   padding: 4rem 0;
 

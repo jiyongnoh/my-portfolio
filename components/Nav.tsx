@@ -12,24 +12,34 @@ const Nav = () => {
     setIsDark(latest > 890); // 300px 이상 1000px 이하일 때 활성화
   });
 
+  const scrollToPosition = (position: number) => {
+    window.scrollTo({
+      top: position, // 이동할 y 좌표
+      behavior: "smooth", // 스크롤 애니메이션
+    });
+  };
+
   return (
     <MasterContainer>
       <NavContainer dark={isDark ? "true" : ""}>
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-          <Title dark={isDark ? "true" : ""}>{`노지용's Portfolio`}</Title>
+          <Title
+            onClick={() => scrollToPosition(0)}
+            dark={isDark ? "true" : ""}
+          >{`노지용's Portfolio`}</Title>
         </motion.div>
         <TagContainer dark={isDark ? "true" : ""}>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag>About me</Tag>
+            <Tag onClick={() => scrollToPosition(911)}>About me</Tag>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag>Skill</Tag>
+            <Tag onClick={() => scrollToPosition(1360)}>Skill</Tag>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag>Archiving</Tag>
+            <Tag onClick={() => scrollToPosition(2707)}>Archiving</Tag>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag>Project</Tag>
+            <Tag onClick={() => scrollToPosition(4000)}>Project</Tag>
           </motion.div>
         </TagContainer>
       </NavContainer>
@@ -48,6 +58,8 @@ const MasterContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  box-shadow: 0 1px 0.3rem hsl(0deg 0% 80% / 80%);
 `;
 
 const NavContainer = styled.nav<{ dark?: string }>`
@@ -56,7 +68,6 @@ const NavContainer = styled.nav<{ dark?: string }>`
 
   background-color: ${(props) =>
     props.dark ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0.01)"};
-  border-bottom: 1px solid gray;
 
   display: flex;
   justify-content: space-evenly;

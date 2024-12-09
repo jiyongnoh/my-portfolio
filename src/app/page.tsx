@@ -3,6 +3,7 @@ import Introduce from "../../components/Introduce";
 import About from "../../components/About";
 import Skill from "../../components/Skill";
 import Archiving from "../../components/Archiving";
+import Project from "../../components/Project";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       {/* Archiving Section */}
       <Archiving />
       {/* Project Section */}
+      <Project />
     </Main>
   );
 }

@@ -9,7 +9,7 @@ const Project = () => {
   const [isOpen3, setIsOpen3] = useState(false);
   return (
     <SkillContainer>
-      <Title>{`Project`}</Title>
+      <Title>{`PROJECT`}</Title>
       <InfoContainer>
         <motion.div
           layout
@@ -217,7 +217,7 @@ const Project = () => {
 
 const SkillContainer = styled.div`
   width: 100vw;
-  background-color: #ffc107;
+  background-color: #4244ff;
   padding: 4rem 0;
 
   display: flex;
@@ -241,7 +241,7 @@ const Title = styled.span`
   font-size: 3rem;
   font-weight: bold;
   font-family: sans-serif;
-  color: black;
+  color: white;
 
   border-bottom: 1px solid gray;
 

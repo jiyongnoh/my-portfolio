@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const Introduce = () => {
+  const scrollToPosition = (position: number) => {
+    window.scrollTo({
+      top: position, // 이동할 y 좌표
+      behavior: "smooth", // 스크롤 애니메이션
+    });
+  };
   return (
     <IntroContainer>
       <motion.div
@@ -44,7 +50,7 @@ const Introduce = () => {
         transition={{ duration: 0.5, delay: 4 }}
       >
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-          <Button>About Me</Button>
+          <Button onClick={() => scrollToPosition(911)}>About Me</Button>
         </motion.div>
       </motion.div>
     </IntroContainer>
