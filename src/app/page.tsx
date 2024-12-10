@@ -5,6 +5,8 @@ import Skill from "../../components/Skill";
 import Archiving from "../../components/Archiving";
 import Project from "../../components/Project";
 
+export const revalidate = 0; // SSG 활성화
+
 export default function Home() {
   return (
     <Main>
