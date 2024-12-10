@@ -16,7 +16,11 @@ const Project = () => {
   useEffect(() => {
     const handleResize = () => {
       // 모바일 반응형 처리
-      window.innerWidth <= 728 ? setMobileFlag(true) : setMobileFlag(false);
+      if (window.innerWidth <= 728) {
+        setMobileFlag(true);
+      } else {
+        setMobileFlag(false);
+      }
     };
 
     handleResize();
