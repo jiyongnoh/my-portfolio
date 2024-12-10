@@ -20,7 +20,7 @@ const FrontSkillArray = [
 const BackSkillArray = [
   { src: "/Skills/node.png", alt: "Node", width: 180 },
   { src: "/Skills/express_cover.png", alt: "Express", width: 150 },
-  { src: "/Skills/mysq.webp", alt: "MySQL", width: 200 },
+  { src: "/Skills/mysq.webp", alt: "MySQL", width: 150 },
 ];
 
 const DeploySkillArray = [
@@ -34,8 +34,8 @@ const ExtraSkillArray = [
   { src: "/Skills/git.png", alt: "Git", width: 130 },
   { src: "/Skills/vscode.png", alt: "VScode", width: 150 },
   { src: "/Skills/postman.jpg", alt: "Postman", width: 150 },
-  { src: "/Skills/slack.png", alt: "Slack", width: 150 },
-  { src: "/Skills/figma.408d0f4e.png", alt: "Figma", width: 150 },
+  // { src: "/Skills/slack.png", alt: "Slack", width: 150 },
+  { src: "/Skills/figma.408d0f4e.png", alt: "Figma", width: 180 },
 ];
 
 const Skill = () => {

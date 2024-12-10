@@ -39,7 +39,7 @@ const Nav = () => {
             <Tag onClick={() => scrollToPosition(2645)}>Archiving</Tag>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Tag onClick={() => scrollToPosition(4000)}>Project</Tag>
+            <Tag onClick={() => scrollToPosition(3200)}>Project</Tag>
           </motion.div>
         </TagContainer>
       </NavContainer>
@@ -60,6 +60,8 @@ const MasterContainer = styled.div`
   align-items: center;
 
   box-shadow: 0 1px 0.3rem hsl(0deg 0% 80% / 80%);
+
+  z-index: 1;
 `;
 
 const NavContainer = styled.nav<{ dark?: string }>`
