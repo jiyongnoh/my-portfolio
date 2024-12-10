@@ -220,6 +220,12 @@ const JobContainer = styled.div`
   align-items: flex-start;
 
   gap: 4rem;
+
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 const GridContainer = styled.div`
@@ -227,6 +233,14 @@ const GridContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
 
   gap: 0.5rem;
+
+  @media (max-width: 1080px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const ColumnContainer = styled.div`
@@ -254,6 +268,10 @@ const JobCard = styled.div`
   gap: 1rem;
 
   user-select: none;
+
+  @media (max-width: 1080px) {
+    min-width: 350px;
+  }
 `;
 
 const Title = styled.span`

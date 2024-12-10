@@ -67,6 +67,10 @@ const IntroContainer = styled.section`
   align-items: center;
 
   gap: 1rem;
+
+  @media (max-width: 1080px) {
+    padding: 2rem;
+  }
 `;
 
 const Title = styled.span`
@@ -76,6 +80,10 @@ const Title = styled.span`
   color: white;
 
   user-select: none;
+
+  @media (max-width: 1080px) {
+    font-size: 1.25rem;
+  }
 `;
 
 const Button = styled.button`
@@ -93,8 +101,13 @@ const Button = styled.button`
   cursor: pointer;
 
   user-select: none;
+
   &:hover {
     background-color: #edb307;
+  }
+
+  @media (max-width: 1080px) {
+    display: none;
   }
 `;
 

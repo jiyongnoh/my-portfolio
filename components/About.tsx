@@ -58,17 +58,27 @@ const InfoContainer = styled.div`
   align-items: center;
 
   gap: 10rem;
+
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    gap: 4rem;
+  }
 `;
 
 const InfoCard = styled.div`
   width: 300px;
   height: 200px;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 
   gap: 1rem;
+
+  @media (max-width: 1080px) {
+    height: auto;
+  }
 `;
 
 const Title = styled.span`

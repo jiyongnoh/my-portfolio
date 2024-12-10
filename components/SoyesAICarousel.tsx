@@ -10,13 +10,15 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const imgList = [
-  "/KikleEdu/main.png",
-  "/KikleEdu/contents.png",
-  "/KikleEdu/class.png",
-  "/KikleEdu/classDetail.png",
+  "/SoyesAI/12422208_1.png",
+  "/SoyesAI/12422208_2.png",
+  "/SoyesAI/12422208_3.png",
+  "/SoyesAI/12422208_4.png",
+  "/SoyesAI/12422208_5.png",
+  "/SoyesAI/12422208_6.png",
 ];
 
-const KikleCarousel: React.FC = () => {
+const SoyesAICarousel: React.FC = () => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
@@ -33,13 +35,12 @@ const KikleCarousel: React.FC = () => {
           <SwiperSlide key={url}>
             <Image
               src={url}
-              alt={"Kikle_Carousel_Img_" + index}
+              alt={"SoyesAI_Carousel_Img_" + index}
               width={1290}
               height={2796}
               style={{
                 maxWidth: "100%",
                 height: "auto",
-                cursor: "pointer",
                 userSelect: "none",
               }}
             />
@@ -50,4 +51,4 @@ const KikleCarousel: React.FC = () => {
   );
 };
 
-export default KikleCarousel;
+export default SoyesAICarousel;

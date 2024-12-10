@@ -95,6 +95,12 @@ const RowContainer = styled.div`
   align-items: flex-start;
 
   gap: 4rem;
+
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 const CardContainer = styled.div`
@@ -112,6 +118,14 @@ const CardContainer = styled.div`
   align-items: flex-start;
 
   gap: 1rem;
+
+  @media (max-width: 1080px) {
+    width: 335px;
+    height: auto;
+
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 // const PptContainer = styled.div`

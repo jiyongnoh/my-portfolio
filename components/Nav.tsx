@@ -62,6 +62,10 @@ const MasterContainer = styled.div`
   box-shadow: 0 1px 0.3rem hsl(0deg 0% 80% / 80%);
 
   z-index: 1;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const NavContainer = styled.nav<{ dark?: string }>`
