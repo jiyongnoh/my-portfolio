@@ -47,7 +47,10 @@ const Project = () => {
       <InfoContainer>
         {/* 키클 에듀 */}
         <motion.div
-          layout
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
           style={{
             width: mobileFlag ? "90%" : "66%",
             height: mobileFlag ? "900px" : "700px",
@@ -222,7 +225,10 @@ const Project = () => {
 
         {/* 소예 아이 */}
         <motion.div
-          layout
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
           style={{
             width: mobileFlag ? "90%" : "66%",
             height: mobileFlag ? "900px" : "700px",

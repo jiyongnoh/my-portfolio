@@ -1,6 +1,7 @@
 "use client";
 import styled from "styled-components";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -19,21 +20,28 @@ const About = () => {
         />
         {`ABOUT ME`}
       </Title>
-      <InfoContainer>
-        <InfoCard>
-          <Subtitle>{`이름`}</Subtitle>
-          <Descripion>{`노지용`}</Descripion>
-        </InfoCard>
-        <InfoCard>
-          <Subtitle>{`생년월일`}</Subtitle>
-          <Descripion>{`1995.05.23`}</Descripion>
-        </InfoCard>
-        <InfoCard>
-          <Subtitle>{`연락처`}</Subtitle>
-          <Descripion>{`010-7473-8485`}</Descripion>
-          <Descripion>{`earthworm77@naver.com`}</Descripion>
-        </InfoCard>
-      </InfoContainer>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <InfoContainer>
+          <InfoCard>
+            <Subtitle>{`이름`}</Subtitle>
+            <Descripion>{`노지용`}</Descripion>
+          </InfoCard>
+          <InfoCard>
+            <Subtitle>{`생년월일`}</Subtitle>
+            <Descripion>{`1995.05.23`}</Descripion>
+          </InfoCard>
+          <InfoCard>
+            <Subtitle>{`연락처`}</Subtitle>
+            <Descripion>{`010-7473-8485`}</Descripion>
+            <Descripion>{`earthworm77@naver.com`}</Descripion>
+          </InfoCard>
+        </InfoContainer>
+      </motion.div>
     </AboutContainer>
   );
 };

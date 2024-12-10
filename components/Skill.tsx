@@ -58,61 +58,38 @@ const Skill = () => {
       </Title>
       <JobContainer>
         {/* Front Job Card */}
-        <JobCard>
-          <Jobtitle>Front-End</Jobtitle>
-          {/* Grid Container */}
-          <GridContainer>
-            {gridFrontSkillArray.map((skill) => {
-              const { src, alt, width, height } = skill;
-              return (
-                <motion.div
-                  key={alt}
-                  whileHover={{ scale: 1.1 }}
-                  style={{
-                    width: "100%",
-                    padding: "0.5rem",
-                    border: "2px solid #eeeeee",
-                    borderRadius: "20px",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Image src={src} alt={alt} width={width} height={height} />
-                </motion.div>
-              );
-            })}
-          </GridContainer>
-
-          {FrontSkillArray.map((skill) => {
-            const { src, alt, width } = skill;
-            return (
-              <motion.div
-                key={alt}
-                whileHover={{ scale: 1.1 }}
-                style={{
-                  width: "100%",
-                  padding: "0.5rem",
-                  border: "2px solid #eeeeee",
-                  borderRadius: "20px",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <Image
-                  src={src}
-                  alt={alt}
-                  width={width ? width : 150}
-                  height={90}
-                />
-              </motion.div>
-            );
-          })}
-        </JobCard>
-        <ColumnContainer>
-          {/* Back Job Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <JobCard>
-            <Jobtitle>Back-End</Jobtitle>
-            {BackSkillArray.map((skill) => {
+            <Jobtitle>Front-End</Jobtitle>
+            {/* Grid Container */}
+            <GridContainer>
+              {gridFrontSkillArray.map((skill) => {
+                const { src, alt, width, height } = skill;
+                return (
+                  <motion.div
+                    key={alt}
+                    whileHover={{ scale: 1.1 }}
+                    style={{
+                      width: "100%",
+                      padding: "0.5rem",
+                      border: "2px solid #eeeeee",
+                      borderRadius: "20px",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Image src={src} alt={alt} width={width} height={height} />
+                  </motion.div>
+                );
+              })}
+            </GridContainer>
+
+            {FrontSkillArray.map((skill) => {
               const { src, alt, width } = skill;
               return (
                 <motion.div
@@ -137,11 +114,83 @@ const Skill = () => {
               );
             })}
           </JobCard>
-          {/* Deploy Job Card */}
+        </motion.div>
+        {/* Back Job Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <ColumnContainer>
+            <JobCard>
+              <Jobtitle>Back-End</Jobtitle>
+              {BackSkillArray.map((skill) => {
+                const { src, alt, width } = skill;
+                return (
+                  <motion.div
+                    key={alt}
+                    whileHover={{ scale: 1.1 }}
+                    style={{
+                      width: "100%",
+                      padding: "0.5rem",
+                      border: "2px solid #eeeeee",
+                      borderRadius: "20px",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Image
+                      src={src}
+                      alt={alt}
+                      width={width ? width : 150}
+                      height={90}
+                    />
+                  </motion.div>
+                );
+              })}
+            </JobCard>
+            {/* Deploy Job Card */}
+            <JobCard>
+              <Jobtitle>Deployment</Jobtitle>
+              {/* Grid Container */}
+              {DeploySkillArray.map((skill) => {
+                const { src, alt, width } = skill;
+                return (
+                  <motion.div
+                    key={alt}
+                    whileHover={{ scale: 1.1 }}
+                    style={{
+                      width: "100%",
+                      padding: "0.5rem",
+                      border: "2px solid #eeeeee",
+                      borderRadius: "20px",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Image
+                      src={src}
+                      alt={alt}
+                      width={width ? width : 150}
+                      height={80}
+                    />
+                  </motion.div>
+                );
+              })}
+            </JobCard>
+          </ColumnContainer>
+        </motion.div>
+        {/* Other Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
           <JobCard>
-            <Jobtitle>Deployment</Jobtitle>
-            {/* Grid Container */}
-            {DeploySkillArray.map((skill) => {
+            <Jobtitle>Extra</Jobtitle>
+            {ExtraSkillArray.map((skill) => {
               const { src, alt, width } = skill;
               return (
                 <motion.div
@@ -166,35 +215,7 @@ const Skill = () => {
               );
             })}
           </JobCard>
-        </ColumnContainer>
-        {/* Other Card */}
-        <JobCard>
-          <Jobtitle>Extra</Jobtitle>
-          {ExtraSkillArray.map((skill) => {
-            const { src, alt, width } = skill;
-            return (
-              <motion.div
-                key={alt}
-                whileHover={{ scale: 1.1 }}
-                style={{
-                  width: "100%",
-                  padding: "0.5rem",
-                  border: "2px solid #eeeeee",
-                  borderRadius: "20px",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <Image
-                  src={src}
-                  alt={alt}
-                  width={width ? width : 150}
-                  height={80}
-                />
-              </motion.div>
-            );
-          })}
-        </JobCard>
+        </motion.div>
       </JobContainer>
     </SkillContainer>
   );
