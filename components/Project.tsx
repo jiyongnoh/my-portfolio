@@ -106,7 +106,7 @@ const Project = () => {
               <ProjectTitle>키클 에듀</ProjectTitle>
               <ProjectSubTitle>2024.7 - 2024.10</ProjectSubTitle>
               <RowContainer>
-                <Carousel type="kikle" />
+                {!isOpen && <Carousel type="kikle" />}
                 <ColumnContainer>
                   <DescriptionContainer>
                     <Descripion>
@@ -284,7 +284,7 @@ const Project = () => {
               <ProjectTitle>소예 아이</ProjectTitle>
               <ProjectSubTitle>2024.4 - 2024.11</ProjectSubTitle>
               <RowContainer>
-                <Carousel type="soyesAI" />
+                {!isOpen2 && <Carousel type="soyesAI" />}
                 <ColumnContainer>
                   <DescriptionContainer>
                     <Descripion>
