@@ -12,19 +12,11 @@ const Project = () => {
   const [isOpen2, setIsOpen2] = useState(false);
   // Resize 상태 처리
   const [mobileFlag, setMobileFlag] = useState(false);
-  const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
-  });
 
   useEffect(() => {
     const handleResize = () => {
       // 모바일 반응형 처리
       window.innerWidth <= 728 ? setMobileFlag(true) : setMobileFlag(false);
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
     };
 
     handleResize();
