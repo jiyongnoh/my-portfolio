@@ -306,9 +306,12 @@ const Project = () => {
                 <ColumnContainer>
                   <DescriptionContainer>
                     <Descripion>
+                      {`소예아이는 심리 검사 및 상담 결과에 따라 맞춤형 컨텐츠를 제공하는 아동 청소년 멘탈케어 솔루션 서비스입니다`}
+                    </Descripion>
+                    <Descripion>
                       {`기획(1인) + 디자인(1인) + FE(1인) + BE(1인) 총 4인에서 진행했고 BE 개발자로 참여했습니다`}
                     </Descripion>
-                    <Descripion>{`Unity 개발자와 협업하며 개발했고 브라우저가 아닌 환경에서 데이터를 주고받는 경험을 할 수 있었습니다`}</Descripion>
+                    <Descripion>{`Unity 개발자와의 협업을 통해 브라우저가 아닌 환경에서 데이터를 주고받는 경험을 할 수 있었습니다`}</Descripion>
                     <Descripion>{`OpenAI API 기반의 상담 프로그램을 만들면서 Prompt Engineering을 접했고, LLM 모델에게 명령하는 방식을 보다 더 깊이 탐구할 수 있었습니다`}</Descripion>
                   </DescriptionContainer>
                   <FooterContainer>
@@ -570,7 +573,7 @@ const UrlA = styled.a`
   font-size: 1rem;
   font-weight: bold;
   font-family: sans-serif;
-  color: #6f7478;
+  color: #7cb8e6;
 
   user-select: none;
 `;
