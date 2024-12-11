@@ -1,26 +1,19 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import StyledComponentsRegistry from "../../lib/registry";
 import Nav from "../../components/Nav";
-
-export const metadata: Metadata = {
-  title: "노지용's Portfolio",
-  icons: {
-    icon: "/favicon.ico?v=1", // 캐시 무효화
-    shortcut: "/favicon.ico?v=1",
-    apple: "/favicon.ico?v=1",
-  },
-};
+import "./globals.css";
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="ko">
       <body>
-        <Nav />
-        {children}
+        <StyledComponentsRegistry>
+          <Nav />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
