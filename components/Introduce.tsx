@@ -104,7 +104,7 @@ const Button = styled.button`
   user-select: none;
 
   &:hover {
-    background-color: #edb307;
+    background-color: white;
     color: black;
 
     border: none;
