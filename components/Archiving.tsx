@@ -23,26 +23,26 @@ const Archiving = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <motion.a
+          <a
             href="https://github.com/jiyongnoh"
             target="_blank" // 새 탭에서 열기
             rel="noopener noreferrer" // 보안 속성
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
           >
-            <CardContainer>
-              <Image
-                src={"/Archiving/github.png"}
-                alt={"test"}
-                width={420}
-                height={120}
-                style={{ maxWidth: "40%", height: "auto" }}
-              />
-              <UrlSpan>https://github.com/jiyongnoh</UrlSpan>
-              <Subtitle>소스 코드 저장소입니다</Subtitle>
-              <Description>{`(*클릭 시 새탭으로 이동합니다)`}</Description>
-            </CardContainer>
-          </motion.a>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <CardContainer>
+                <Image
+                  src={"/Archiving/github.png"}
+                  alt={"test"}
+                  width={420}
+                  height={120}
+                  style={{ maxWidth: "40%", height: "auto" }}
+                />
+                <UrlSpan>https://github.com/jiyongnoh</UrlSpan>
+                <Subtitle>소스 코드 저장소입니다</Subtitle>
+                <Description>{`(*클릭 시 새탭으로 이동합니다)`}</Description>
+              </CardContainer>
+            </motion.div>
+          </a>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 100 }}
@@ -50,26 +50,26 @@ const Archiving = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <motion.a
+          <a
             href="https://velog.io/@njy95000/posts"
             target="_blank" // 새 탭에서 열기
             rel="noopener noreferrer" // 보안 속성
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
           >
-            <CardContainer>
-              <Image
-                src={"/Archiving/velog.svg"}
-                alt={"test"}
-                width={689}
-                height={362}
-                style={{ maxWidth: "30%", height: "auto" }}
-              />
-              <UrlSpan>https://velog.io/@njy95000/posts</UrlSpan>
-              <Subtitle>개발 블로그입니다</Subtitle>
-              <Description>{`(*클릭 시 새탭으로 이동합니다)`}</Description>
-            </CardContainer>
-          </motion.a>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <CardContainer>
+                <Image
+                  src={"/Archiving/velog.svg"}
+                  alt={"test"}
+                  width={689}
+                  height={362}
+                  style={{ maxWidth: "30%", height: "auto" }}
+                />
+                <UrlSpan>https://velog.io/@njy95000/posts</UrlSpan>
+                <Subtitle>개발 블로그입니다</Subtitle>
+                <Description>{`(*클릭 시 새탭으로 이동합니다)`}</Description>
+              </CardContainer>
+            </motion.div>
+          </a>
         </motion.div>
       </RowContainer>
       {/* <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
