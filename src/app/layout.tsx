@@ -4,6 +4,11 @@ import Nav from "../../components/Nav";
 
 export const metadata: Metadata = {
   title: "노지용's Portfolio",
+  icons: {
+    icon: "/favicon.ico?v=1", // 캐시 무효화
+    shortcut: "/favicon.ico?v=1",
+    apple: "/favicon.ico?v=1",
+  },
 };
 
 export default function RootLayout({
