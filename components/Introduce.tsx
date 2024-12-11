@@ -2,6 +2,14 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+const mentList = [
+  "쌓아가는 개발자 노지용입니다",
+  "협업과 커뮤니케이션을 중요하게 여기며, 상대방의 관점에서 문제를 바라보고 해결하려 노력합니다",
+  "효과적인 협업은 상대방의 생각을 충분히 이해하는 것에서 시작된다고 믿습니다",
+  "Front-End로 입사하여 Back-End 인프라까지 구축할 수 있는 개발자로 성장했습니다",
+  "새로운 기술을 배우고 적용하며 꾸준히 역량을 쌓아가고 있습니다",
+];
+
 const Introduce = () => {
   const scrollToPosition = (position: number) => {
     window.scrollTo({
@@ -11,43 +19,22 @@ const Introduce = () => {
   };
   return (
     <IntroContainer>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <Title>{`쌓아가는 개발자 노지용입니다`}</Title>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1 }}
-      >
-        <Title>
-          {`협업과 커뮤니케이션을 중요하게 여기며, 상대방의 관점에서 문제를
-          바라보고 해결하려 노력합니다`}
-        </Title>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 2 }}
-      >
-        <Title>{`Front-End 포지션으로 입사한 후 Back-End 인프라까지 구축할 수 있는 개발자로 성장했습니다`}</Title>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 3 }}
-      >
-        <Title>
-          {`새로운 기술을 배우고 적용하며 꾸준히 역량을 쌓아가고 있습니다`}
-        </Title>
-      </motion.div>
+      {mentList.map((ment, index) => {
+        return (
+          <motion.div
+            key={ment}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: index }}
+          >
+            <Title>{ment}</Title>
+          </motion.div>
+        );
+      })}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 4 }}
+        transition={{ duration: 0.5, delay: 5 }}
       >
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <Button onClick={() => scrollToPosition(830)}>About Me</Button>

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     apple: "/favicon.ico?v=1",
   },
 };
+
 export const revalidate = 0; // SSG 활성화
 
 export default function Home() {

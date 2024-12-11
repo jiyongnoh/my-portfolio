@@ -110,11 +110,13 @@ const Project = () => {
                 <ColumnContainer>
                   <DescriptionContainer>
                     <Descripion>
-                      {`키클 에듀는 회사 소속 강사 통합 관리 앱입니다
-                      기획(1인) + 디자인(1인) + 개발(1인) 총 3인에서 진행했습니다`}
+                      {`키클 에듀는 회사 소속 강사들을 위한 수업 매칭, 강사 스케줄 등을 통합 관리하는 앱 서비스입니다`}
                     </Descripion>
                     <Descripion>
-                      {`강사들에게 음원, 영상과 같은 강의에 필요한 자료를 제공하고 강의를 희망하는 기관을 대상으로 회사를 소개하기 위한 목적으로 제작되었습니다`}
+                      {`기획(1인) + 디자인(1인) + 개발(1인) 총 3인에서 진행했습니다`}
+                    </Descripion>
+                    <Descripion>
+                      {`강사들에게 음원, 영상과 같은 강의에 필요한 자료를 제공하고, 강의를 희망하는 기관을 대상으로 회사를 소개하기 위한 목적으로 제작되었습니다`}
                     </Descripion>
                     <Descripion>
                       {`요구사항 분석부터 설계, 개발, 유지보수까지 모든 과정을 주도했던 만큼 책임감을 가지고 참여했습니다`}
@@ -428,7 +430,7 @@ const ProjectContainer = styled.div`
 
 const InfoContainer = styled.div`
   width: 100%;
-
+  padding-bottom: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
