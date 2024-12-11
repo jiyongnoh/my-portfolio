@@ -106,7 +106,7 @@ const Project = () => {
               <ProjectTitle>키클 에듀</ProjectTitle>
               <ProjectSubTitle>2024.7 - 2024.10</ProjectSubTitle>
               <RowContainer>
-                {!isOpen && <Carousel type="kikle" />}
+                <Carousel type="kikle" isOpen={isOpen} />
                 <ColumnContainer>
                   <DescriptionContainer>
                     <Descripion>
@@ -191,32 +191,50 @@ const Project = () => {
               <RowContainer>
                 <TmiColumnContainer>
                   <DescriptionContainer>
-                    <Descripion>{`Front-End: Next 13 Page Router 사용 + Vercel 배포`}</Descripion>
-                    <TmiUrlA
-                      href="https://velog.io/@njy95000/202441-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-AWS-EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-Docker-Jenkins-CICD-%EA%B5%AC%EC%B6%95"
-                      target="blank"
-                    >{`Back-End(Develop Server): Github + Docker + Jenkins + EC2 배포 자동화 구현`}</TmiUrlA>
-                    <TmiUrlA
-                      href="https://velog.io/@njy95000/2024521-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-AWS-EKS-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95"
-                      target="blank"
-                    >{`Back-End(Release Server): AWS EKS를 사용한 Kubernetes 환경 구축`}</TmiUrlA>
-                    <TmiUrlA
-                      href="https://velog.io/@njy95000/PWA-Progressive-Web-App"
-                      target="blank"
-                    >{`모바일 접근성 향상 및 배포를 위해 PWA로 구현`}</TmiUrlA>
-                    <TmiUrlA
-                      href="https://velog.io/@njy95000/2024115-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-Token-%EC%9D%B8%EC%A6%9D-%EB%B0%A9%EC%8B%9D-%EB%B3%80%EA%B2%BD-Cookie-Header"
-                      target="blank"
-                    >{`회원 유형별 권한 제어를 위해 JWT를 발급하고 API에 인가 미들웨어를 적용`}</TmiUrlA>
-                    <TmiUrlA
-                      href="https://velog.io/@njy95000/SSR-ISR-NextJs"
-                      target="blank"
-                    >{`메인 페이지 LCP [ 3.7s → 0.8s ] 개선 ( SSR → ISR 방식으로 변경 )`}</TmiUrlA>
-                    <Descripion>{`관리자 페이지를 통한 회원 관리 용이성 증진`}</Descripion>
-                    <Descripion>{`요금 최소화를 위해 Cloud Storage 변경 (AWS S3 → Google Drive API)`}</Descripion>
-                    <Descripion>{`검수 시트를 활용하여 오류 수정, 개선, 고도화 작업 지속 중`}</Descripion>
+                    <li>
+                      <Descripion>{`Front-End: Next 13 Page Router 사용 + Vercel 배포`}</Descripion>
+                    </li>
+                    <li>
+                      <TmiUrlA
+                        href="https://velog.io/@njy95000/202441-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-AWS-EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-Docker-Jenkins-CICD-%EA%B5%AC%EC%B6%95"
+                        target="blank"
+                      >{`Back-End(Develop Server): Github + Docker + Jenkins + EC2 배포 자동화 구현`}</TmiUrlA>
+                    </li>
+                    <li>
+                      <TmiUrlA
+                        href="https://velog.io/@njy95000/2024521-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-AWS-EKS-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95"
+                        target="blank"
+                      >{`Back-End(Release Server): AWS EKS를 사용한 Kubernetes 환경 구축`}</TmiUrlA>
+                    </li>
+                    <li>
+                      <TmiUrlA
+                        href="https://velog.io/@njy95000/PWA-Progressive-Web-App"
+                        target="blank"
+                      >{`모바일 접근성 향상 및 배포를 위해 PWA로 구현`}</TmiUrlA>
+                    </li>
+                    <li>
+                      <TmiUrlA
+                        href="https://velog.io/@njy95000/2024115-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-Token-%EC%9D%B8%EC%A6%9D-%EB%B0%A9%EC%8B%9D-%EB%B3%80%EA%B2%BD-Cookie-Header"
+                        target="blank"
+                      >{`회원 유형별 권한 제어를 위해 JWT를 발급하고 API에 인가 미들웨어를 적용`}</TmiUrlA>
+                    </li>
+                    <li>
+                      <TmiUrlA
+                        href="https://velog.io/@njy95000/SSR-ISR-NextJs"
+                        target="blank"
+                      >{`메인 페이지 LCP [ 3.7s → 0.8s ] 개선 ( SSR → ISR 방식으로 변경 )`}</TmiUrlA>
+                    </li>
+                    <li>
+                      <Descripion>{`관리자 페이지를 통한 회원 관리 용이성 증진`}</Descripion>
+                    </li>
+                    <li>
+                      <Descripion>{`요금 최소화를 위해 Cloud Storage 변경 (AWS S3 → Google Drive API)`}</Descripion>
+                    </li>
+                    <li>
+                      <Descripion>{`검수 시트를 활용하여 오류 수정, 개선, 고도화 작업 지속 중`}</Descripion>
+                    </li>
                   </DescriptionContainer>
-                  <FooterSubTitle>{`*해당 색상은 클릭 시 블로그 포스팅으로 이동합니다`}</FooterSubTitle>
+                  <FooterSubTitle>{`( *해당 색상은 클릭 시 블로그 포스팅으로 이동합니다 )`}</FooterSubTitle>
                 </TmiColumnContainer>
               </RowContainer>
             </motion.div>
@@ -284,12 +302,9 @@ const Project = () => {
               <ProjectTitle>소예 아이</ProjectTitle>
               <ProjectSubTitle>2024.4 - 2024.11</ProjectSubTitle>
               <RowContainer>
-                {!isOpen2 && <Carousel type="soyesAI" />}
+                <Carousel type="soyesAI" isOpen={isOpen2} />
                 <ColumnContainer>
                   <DescriptionContainer>
-                    <Descripion>
-                      {`소예 아이는 심리 검사 및 상담 결과에 따라 맞춤형 컨텐츠를 제공하는 아동 청소년 멘탈케어 솔루션 서비스입니다`}
-                    </Descripion>
                     <Descripion>
                       {`기획(1인) + 디자인(1인) + FE(1인) + BE(1인) 총 4인에서 진행했고 BE 개발자로 참여했습니다`}
                     </Descripion>
@@ -362,13 +377,27 @@ const Project = () => {
               <RowContainer>
                 <TmiColumnContainer>
                   <DescriptionContainer>
-                    <Descripion>{`AI 페르소나 적용을 위해 프롬프트 엔지니어링 기반의 명령 프롬프트 구현 및 적용`}</Descripion>
-                    <Descripion>{`기존 심리 검사 관련 테이블 11개의 조회 쿼리를 개선하기 위해 하나의 테이블로 통합`}</Descripion>
-                    <Descripion>{`Table 조회를 줄이기 위해 세션을 활용한 캐싱 적용`}</Descripion>
-                    <Descripion>{`쿠폰 관리 효율성 향상을 위해 "계정당 1회 사용 가능한 쿠폰" 타입 추가`}</Descripion>
-                    <Descripion>{`유저 심리 분석 보고서 파일을 만들어 이메일로 전송하는 기능 구현
-                    (pupeteer를 사용하여 ejs → pdf 변환. 이후 nodemailer를 통해 변환된 파일을 유저 이메일로 전송)`}</Descripion>
-                    <Descripion>{`원활한 협업 위한 API 문서(GitBook) 작성 및 지속 관리`}</Descripion>
+                    <li>
+                      <Descripion>{`AI 페르소나 적용을 위해 프롬프트 엔지니어링 기반의 명령 프롬프트 구현 및 적용`}</Descripion>
+                    </li>
+                    <li>
+                      <Descripion>{`기존 심리 검사 관련 테이블 11개의 조회 쿼리를 개선하기 위해 하나의 테이블로 통합`}</Descripion>
+                    </li>
+                    <li>
+                      <Descripion>{`Table 조회를 줄이기 위해 세션을 활용한 캐싱 적용`}</Descripion>
+                    </li>
+                    <li>
+                      <Descripion>{`쿠폰 관리 효율성 향상을 위해 "계정당 1회 사용 가능한 쿠폰" 타입 추가`}</Descripion>
+                    </li>
+                    <li>
+                      <Descripion>
+                        {`유저 심리 분석 보고서 파일을 만들어 이메일로 전송하는 기능 구현
+                        (pupeteer를 사용하여 ejs → pdf 변환. 이후 nodemailer를 통해 변환된 파일을 유저 이메일로 전송)`}
+                      </Descripion>
+                    </li>
+                    <li>
+                      <Descripion>{`원활한 협업 위한 API 문서(GitBook) 작성 및 지속 관리`}</Descripion>
+                    </li>
                   </DescriptionContainer>
                 </TmiColumnContainer>
               </RowContainer>

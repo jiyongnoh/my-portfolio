@@ -27,56 +27,65 @@ const soyesaiImgList = [
 
 interface CarouselType {
   type: string;
+  isOpen: boolean;
 }
 
-const Carousel = ({ type }: CarouselType) => {
+const Carousel = ({ type, isOpen }: CarouselType) => {
   return (
-    <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={0}
-      slidesPerView={type === "kikle" ? 2 : 2}
-      slidesPerGroup={1}
-      navigation
-      pagination={{ clickable: true }}
-      autoplay={{ delay: 3000 }}
-      loop={true}
+    <div
+      style={{
+        visibility: isOpen ? "hidden" : "visible",
+        opacity: isOpen ? 0 : 1,
+        transition: "0.5s",
+      }}
     >
-      {type === "kikle"
-        ? kikleImgList.map((url, index) => {
-            return (
-              <SwiperSlide key={url}>
-                <Image
-                  src={url}
-                  alt={"Kikle_Carousel_Img_" + index}
-                  width={1290}
-                  height={2796}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                    userSelect: "none",
-                  }}
-                />
-              </SwiperSlide>
-            );
-          })
-        : soyesaiImgList.map((url, index) => {
-            return (
-              <SwiperSlide key={url}>
-                <Image
-                  src={url}
-                  alt={"SoyesAI_Carousel_Img_" + index}
-                  width={1290}
-                  height={2796}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                    userSelect: "none",
-                  }}
-                />
-              </SwiperSlide>
-            );
-          })}
-    </Swiper>
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={0}
+        slidesPerView={2}
+        slidesPerGroup={1}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        loop={true}
+      >
+        {type === "kikle"
+          ? kikleImgList.map((url, index) => {
+              return (
+                <SwiperSlide key={url}>
+                  <Image
+                    src={url}
+                    alt={"Kikle_Carousel_Img_" + index}
+                    width={1290}
+                    height={2796}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      userSelect: "none",
+                    }}
+                  />
+                </SwiperSlide>
+              );
+            })
+          : soyesaiImgList.map((url, index) => {
+              return (
+                <SwiperSlide key={url}>
+                  <Image
+                    src={url}
+                    alt={"SoyesAI_Carousel_Img_" + index}
+                    width={1290}
+                    height={2796}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                      userSelect: "none",
+                    }}
+                  />
+                </SwiperSlide>
+              );
+            })}
+      </Swiper>
+    </div>
   );
 };
 
