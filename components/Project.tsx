@@ -47,8 +47,8 @@ const Project = () => {
       <InfoContainer>
         {/* 키클 에듀 */}
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
           style={{
@@ -243,8 +243,8 @@ const Project = () => {
 
         {/* 소예 아이 */}
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
           style={{
@@ -411,6 +411,7 @@ const Project = () => {
 
 const ProjectContainer = styled.div`
   width: 100vw;
+  height: auto;
   background-color: #4244ff;
   padding: 4rem 0;
 
@@ -499,7 +500,7 @@ const RowContainer = styled.div`
   }
 `;
 
-const DescriptionContainer = styled.div`
+const DescriptionContainer = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;

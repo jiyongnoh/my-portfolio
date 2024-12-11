@@ -12,15 +12,15 @@ const Introduce = () => {
   return (
     <IntroContainer>
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
         <Title>{`쌓아가는 개발자 노지용입니다`}</Title>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1 }}
       >
         <Title>
@@ -29,15 +29,15 @@ const Introduce = () => {
         </Title>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 2 }}
       >
         <Title>{`Front-End 포지션으로 입사한 후 Back-End 인프라까지 구축할 수 있는 개발자로 성장했습니다`}</Title>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 3 }}
       >
         <Title>
@@ -59,7 +59,7 @@ const Introduce = () => {
 
 const IntroContainer = styled.section`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -87,12 +87,13 @@ const Title = styled.span`
 `;
 
 const Button = styled.button`
-  background-color: #ffc107;
+  margin-top: 1rem;
+  background-color: black;
 
-  color: black;
+  color: white;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid white;
+  border-radius: 10px;
 
   font-size: 1rem;
   font-family: sans-serif;
@@ -104,6 +105,9 @@ const Button = styled.button`
 
   &:hover {
     background-color: #edb307;
+    color: black;
+
+    border: none;
   }
 
   @media (max-width: 1080px) {
