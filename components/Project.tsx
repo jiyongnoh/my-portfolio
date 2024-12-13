@@ -16,7 +16,7 @@ const Project = () => {
   useEffect(() => {
     const handleResize = () => {
       // 모바일 반응형 처리
-      if (window.innerWidth <= 728) {
+      if (window.innerWidth <= 1080) {
         setMobileFlag(true);
       } else {
         setMobileFlag(false);
@@ -467,6 +467,10 @@ const Descripion = styled.span`
   white-space: pre-line;
 
   user-select: none;
+
+  @media (max-width: 1080px) {
+    font-size: 13px;
+  }
 `;
 
 const ProjectTitle = styled.span`
@@ -587,6 +591,10 @@ const TmiUrlA = styled.a`
   color: #3870ff;
 
   user-select: none;
+
+  @media (max-width: 1080px) {
+    font-size: 13px;
+  }
 `;
 
 const SkillContainer = styled.div`

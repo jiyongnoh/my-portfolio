@@ -72,14 +72,14 @@ a {
 
 @media (max-width: 1080px) {
   .swiper {
-    width: 300px; /* 부모 요소에 맞게 가로폭 설정 */
+    width: 40vw; /* 부모 요소에 맞게 가로폭 설정 */
     height: auto; /* 원하는 높이 설정 */
   }
 }
 
 @media (max-width: 768px) {
   .swiper {
-    width: 250px; /* 부모 요소에 맞게 가로폭 설정 */
+    width: 50vw; /* 부모 요소에 맞게 가로폭 설정 */
     height: auto; /* 원하는 높이 설정 */
   }
 }
