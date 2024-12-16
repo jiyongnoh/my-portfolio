@@ -7,6 +7,78 @@ import { useEffect, useState } from "react";
 
 import Carousel from "./Carousel";
 
+const kikleDescripionList = [
+  "키클 에듀는 회사 소속 강사들을 위한 수업 매칭, 강사 스케줄 등을 통합 관리하는 앱 서비스입니다",
+  "기획(1인) + 디자인(1인) + 개발(1인) 총 3인에서 진행했습니다",
+  "강사들에게 음원, 영상과 같은 강의에 필요한 자료를 제공하고, 강의를 희망하는 기관을 대상으로 회사를 소개하기 위한 목적으로 제작되었습니다",
+  "요구사항 분석부터 설계, 개발, 유지보수까지 모든 과정을 주도했던 만큼 책임감을 가지고 참여했습니다",
+];
+
+const kikleTmiList = [
+  { description: "Front-End: Next 13 Page Router 사용 + Vercel 배포" },
+  {
+    description:
+      "Back-End(Develop Server): Github + Docker + Jenkins + EC2 배포 자동화 구현",
+    tmiUrl:
+      "https://velog.io/@njy95000/202441-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-AWS-EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-Docker-Jenkins-CICD-%EA%B5%AC%EC%B6%95",
+  },
+  {
+    description:
+      "Back-End(Release Server): AWS EKS를 사용한 Kubernetes 환경 구축",
+    tmiUrl:
+      "https://velog.io/@njy95000/2024521-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-AWS-EKS-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95",
+  },
+  {
+    description: "모바일 접근성 향상 및 배포를 위해 PWA로 구현",
+    tmiUrl: "https://velog.io/@njy95000/PWA-Progressive-Web-App",
+  },
+  {
+    description:
+      "회원 유형별 권한 제어를 위해 JWT를 발급하고 API에 인가 미들웨어를 적용",
+    tmiUrl:
+      "https://velog.io/@njy95000/2024115-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-Token-%EC%9D%B8%EC%A6%9D-%EB%B0%A9%EC%8B%9D-%EB%B3%80%EA%B2%BD-Cookie-Header",
+  },
+  {
+    description:
+      "메인 페이지 LCP [ 3.7s → 0.8s ] 개선 ( SSR → ISR 방식으로 변경 )",
+    tmiUrl: "https://velog.io/@njy95000/SSR-ISR-NextJs",
+  },
+  { description: "관리자 페이지를 통한 회원 관리 용이성 증진" },
+  {
+    description:
+      "요금 최소화를 위해 Cloud Storage 변경 (AWS S3 → Google Drive API)",
+  },
+  { description: "검수 시트를 활용하여 오류 수정, 개선, 고도화 작업 지속 중" },
+];
+
+const soyeaiDescripionList = [
+  "소예아이는 심리 검사 및 상담 결과에 따라 맞춤형 컨텐츠를 제공하는 아동 청소년 멘탈케어 솔루션 서비스입니다",
+  "기획(1인) + 디자인(1인) + FE(1인) + BE(1인) 총 4인에서 진행했고 BE 개발자로 참여했습니다",
+  "Unity 개발자와의 협업을 통해 브라우저가 아닌 환경에서 데이터를 주고받는 경험을 할 수 있었습니다",
+  "OpenAI API 기반의 상담 프로그램을 만들면서 Prompt Engineering을 접했고, LLM 모델에게 명령하는 방식을 보다 더 깊이 탐구할 수 있었습니다",
+];
+
+const soyeaiTmiList = [
+  {
+    description:
+      "AI 페르소나 적용을 위해 프롬프트 엔지니어링 기반의 명령 프롬프트 구현 및 적용",
+    tmiUrl: "",
+  },
+  {
+    description:
+      "기존 심리 검사 관련 테이블 11개의 조회 쿼리를 개선하기 위해 하나의 테이블로 통합",
+  },
+  { description: "Table 조회를 줄이기 위해 세션을 활용한 캐싱 적용" },
+  {
+    description: `쿠폰 관리 효율성 향상을 위해 "계정당 1회 사용 가능한 쿠폰" 타입 추가`,
+  },
+  {
+    description: `유저 심리 분석 보고서 파일을 만들어 이메일로 전송하는 기능 구현
+    (pupeteer를 사용하여 ejs → pdf 변환. 이후 nodemailer를 통해 변환된 파일을 유저 이메일로 전송)`,
+  },
+  { description: "원활한 협업 위한 API 문서(GitBook) 작성 및 지속 관리" },
+];
+
 const Project = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -109,18 +181,9 @@ const Project = () => {
                 <Carousel type="kikle" isOpen={isOpen} />
                 <ColumnContainer>
                   <DescriptionContainer>
-                    <Descripion>
-                      {`키클 에듀는 회사 소속 강사들을 위한 수업 매칭, 강사 스케줄 등을 통합 관리하는 앱 서비스입니다`}
-                    </Descripion>
-                    <Descripion>
-                      {`기획(1인) + 디자인(1인) + 개발(1인) 총 3인에서 진행했습니다`}
-                    </Descripion>
-                    <Descripion>
-                      {`강사들에게 음원, 영상과 같은 강의에 필요한 자료를 제공하고, 강의를 희망하는 기관을 대상으로 회사를 소개하기 위한 목적으로 제작되었습니다`}
-                    </Descripion>
-                    <Descripion>
-                      {`요구사항 분석부터 설계, 개발, 유지보수까지 모든 과정을 주도했던 만큼 책임감을 가지고 참여했습니다`}
-                    </Descripion>
+                    {kikleDescripionList.map((el) => {
+                      return <Descripion key={el}>{el}</Descripion>;
+                    })}
                   </DescriptionContainer>
                   <FooterContainer>
                     <FooterRowContainer>
@@ -193,48 +256,20 @@ const Project = () => {
               <RowContainer>
                 <TmiColumnContainer>
                   <DescriptionContainer>
-                    <li>
-                      <Descripion>{`Front-End: Next 13 Page Router 사용 + Vercel 배포`}</Descripion>
-                    </li>
-                    <li>
-                      <TmiUrlA
-                        href="https://velog.io/@njy95000/202441-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-AWS-EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-Docker-Jenkins-CICD-%EA%B5%AC%EC%B6%95"
-                        target="blank"
-                      >{`Back-End(Develop Server): Github + Docker + Jenkins + EC2 배포 자동화 구현`}</TmiUrlA>
-                    </li>
-                    <li>
-                      <TmiUrlA
-                        href="https://velog.io/@njy95000/2024521-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-AWS-EKS-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95"
-                        target="blank"
-                      >{`Back-End(Release Server): AWS EKS를 사용한 Kubernetes 환경 구축`}</TmiUrlA>
-                    </li>
-                    <li>
-                      <TmiUrlA
-                        href="https://velog.io/@njy95000/PWA-Progressive-Web-App"
-                        target="blank"
-                      >{`모바일 접근성 향상 및 배포를 위해 PWA로 구현`}</TmiUrlA>
-                    </li>
-                    <li>
-                      <TmiUrlA
-                        href="https://velog.io/@njy95000/2024115-%EC%98%A4%EB%8A%98-%ED%95%9C-%EC%9D%BC-Token-%EC%9D%B8%EC%A6%9D-%EB%B0%A9%EC%8B%9D-%EB%B3%80%EA%B2%BD-Cookie-Header"
-                        target="blank"
-                      >{`회원 유형별 권한 제어를 위해 JWT를 발급하고 API에 인가 미들웨어를 적용`}</TmiUrlA>
-                    </li>
-                    <li>
-                      <TmiUrlA
-                        href="https://velog.io/@njy95000/SSR-ISR-NextJs"
-                        target="blank"
-                      >{`메인 페이지 LCP [ 3.7s → 0.8s ] 개선 ( SSR → ISR 방식으로 변경 )`}</TmiUrlA>
-                    </li>
-                    <li>
-                      <Descripion>{`관리자 페이지를 통한 회원 관리 용이성 증진`}</Descripion>
-                    </li>
-                    <li>
-                      <Descripion>{`요금 최소화를 위해 Cloud Storage 변경 (AWS S3 → Google Drive API)`}</Descripion>
-                    </li>
-                    <li>
-                      <Descripion>{`검수 시트를 활용하여 오류 수정, 개선, 고도화 작업 지속 중`}</Descripion>
-                    </li>
+                    {kikleTmiList.map((el) => {
+                      const { description, tmiUrl } = el;
+                      return (
+                        <li key={description}>
+                          {tmiUrl ? (
+                            <TmiUrlA href={tmiUrl} target="blank">
+                              {description}
+                            </TmiUrlA>
+                          ) : (
+                            <Descripion>{description}</Descripion>
+                          )}
+                        </li>
+                      );
+                    })}
                   </DescriptionContainer>
                   <FooterSubTitle>{`( *해당 색상은 클릭 시 블로그 포스팅으로 이동합니다 )`}</FooterSubTitle>
                 </TmiColumnContainer>
@@ -307,14 +342,9 @@ const Project = () => {
                 <Carousel type="soyesAI" isOpen={isOpen2} />
                 <ColumnContainer>
                   <DescriptionContainer>
-                    <Descripion>
-                      {`소예아이는 심리 검사 및 상담 결과에 따라 맞춤형 컨텐츠를 제공하는 아동 청소년 멘탈케어 솔루션 서비스입니다`}
-                    </Descripion>
-                    <Descripion>
-                      {`기획(1인) + 디자인(1인) + FE(1인) + BE(1인) 총 4인에서 진행했고 BE 개발자로 참여했습니다`}
-                    </Descripion>
-                    <Descripion>{`Unity 개발자와의 협업을 통해 브라우저가 아닌 환경에서 데이터를 주고받는 경험을 할 수 있었습니다`}</Descripion>
-                    <Descripion>{`OpenAI API 기반의 상담 프로그램을 만들면서 Prompt Engineering을 접했고, LLM 모델에게 명령하는 방식을 보다 더 깊이 탐구할 수 있었습니다`}</Descripion>
+                    {soyeaiDescripionList.map((el) => {
+                      return <Descripion key={el}>{el}</Descripion>;
+                    })}
                   </DescriptionContainer>
                   <FooterContainer>
                     <FooterRowContainer>
@@ -382,27 +412,20 @@ const Project = () => {
               <RowContainer>
                 <TmiColumnContainer>
                   <DescriptionContainer>
-                    <li>
-                      <Descripion>{`AI 페르소나 적용을 위해 프롬프트 엔지니어링 기반의 명령 프롬프트 구현 및 적용`}</Descripion>
-                    </li>
-                    <li>
-                      <Descripion>{`기존 심리 검사 관련 테이블 11개의 조회 쿼리를 개선하기 위해 하나의 테이블로 통합`}</Descripion>
-                    </li>
-                    <li>
-                      <Descripion>{`Table 조회를 줄이기 위해 세션을 활용한 캐싱 적용`}</Descripion>
-                    </li>
-                    <li>
-                      <Descripion>{`쿠폰 관리 효율성 향상을 위해 "계정당 1회 사용 가능한 쿠폰" 타입 추가`}</Descripion>
-                    </li>
-                    <li>
-                      <Descripion>
-                        {`유저 심리 분석 보고서 파일을 만들어 이메일로 전송하는 기능 구현
-                        (pupeteer를 사용하여 ejs → pdf 변환. 이후 nodemailer를 통해 변환된 파일을 유저 이메일로 전송)`}
-                      </Descripion>
-                    </li>
-                    <li>
-                      <Descripion>{`원활한 협업 위한 API 문서(GitBook) 작성 및 지속 관리`}</Descripion>
-                    </li>
+                    {soyeaiTmiList.map((el) => {
+                      const { description, tmiUrl } = el;
+                      return (
+                        <li key={description}>
+                          {tmiUrl ? (
+                            <TmiUrlA href={tmiUrl} target="blank">
+                              {description}
+                            </TmiUrlA>
+                          ) : (
+                            <Descripion>{description}</Descripion>
+                          )}
+                        </li>
+                      );
+                    })}
                   </DescriptionContainer>
                 </TmiColumnContainer>
               </RowContainer>
