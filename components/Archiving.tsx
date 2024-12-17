@@ -37,8 +37,8 @@ const Archiving = () => {
                   height={120}
                   style={{ maxWidth: "40%", height: "auto" }}
                 />
-                <UrlSpan>https://github.com/jiyongnoh</UrlSpan>
-                <Subtitle>소스 코드 저장소입니다</Subtitle>
+                <UrlSpan>{`https://github.com/jiyongnoh`}</UrlSpan>
+                <Subtitle>{`소스 코드 저장소입니다`}</Subtitle>
                 <Description>{`(*클릭 시 새탭으로 이동합니다)`}</Description>
               </CardContainer>
             </motion.div>
@@ -64,26 +64,14 @@ const Archiving = () => {
                   height={362}
                   style={{ maxWidth: "30%", height: "auto" }}
                 />
-                <UrlSpan>https://velog.io/@njy95000/posts</UrlSpan>
-                <Subtitle>개발 블로그입니다</Subtitle>
+                <UrlSpan>{`https://velog.io/@njy95000/posts`}</UrlSpan>
+                <Subtitle>{`개발 블로그입니다`}</Subtitle>
                 <Description>{`(*클릭 시 새탭으로 이동합니다)`}</Description>
               </CardContainer>
             </motion.div>
           </a>
         </motion.div>
       </RowContainer>
-      {/* <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-        <PptContainer>
-          <Image
-            src={"/Archiving/port.png"}
-            alt={"test"}
-            width={689}
-            height={362}
-            style={{ maxWidth: "10%", height: "auto" }}
-          />
-          <span>포트폴리오</span>
-        </PptContainer>
-      </motion.div> */}
     </ArchivingContainer>
   );
 };
