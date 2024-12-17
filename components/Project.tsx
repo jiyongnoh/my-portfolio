@@ -186,7 +186,7 @@ const Project = () => {
                 <Carousel type="kikle" isOpen={isOpen} />
                 <ColumnContainer>
                   <DescriptionContainer>
-                    {kikleDescripionList.map((el) => {
+                    {kikleDescripionList.map((el: string) => {
                       return <Descripion key={el}>{el}</Descripion>;
                     })}
                   </DescriptionContainer>
@@ -347,7 +347,7 @@ const Project = () => {
                 <Carousel type="soyesAI" isOpen={isOpen2} />
                 <ColumnContainer>
                   <DescriptionContainer>
-                    {soyeaiDescripionList.map((el) => {
+                    {soyeaiDescripionList.map((el: string) => {
                       return <Descripion key={el}>{el}</Descripion>;
                     })}
                   </DescriptionContainer>
