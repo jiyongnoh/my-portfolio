@@ -3,7 +3,15 @@ import styled from "styled-components";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const gridFrontSkillArray = [
+// Skill 객체 타입 지정
+type SkillObj = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+};
+
+const gridFrontSkillArray: SkillObj[] = [
   { src: "/Skills/html.png", alt: "HTML", width: 90, height: 90 },
   { src: "/Skills/css.png", alt: "CSS", width: 65, height: 90 },
   { src: "/Skills/js.png", alt: "Javascript", width: 65, height: 90 },
@@ -12,25 +20,25 @@ const gridFrontSkillArray = [
   { src: "/Skills/recoil.svg", alt: "Recoil", width: 90, height: 90 },
 ];
 
-const FrontSkillArray = [
+const FrontSkillArray: SkillObj[] = [
   { src: "/next.svg", alt: "NextJS", width: 150 },
   { src: "/Skills/react.png", alt: "React", width: 200 },
 ];
 
-const BackSkillArray = [
+const BackSkillArray: SkillObj[] = [
   { src: "/Skills/node.png", alt: "Node", width: 180 },
   { src: "/Skills/express_cover.png", alt: "Express", width: 150 },
   { src: "/Skills/mysq.webp", alt: "MySQL", width: 150 },
 ];
 
-const DeploySkillArray = [
+const DeploySkillArray: SkillObj[] = [
   { src: "/Skills/aws.png", alt: "AWS", width: 130 },
   { src: "/Skills/docker.png", alt: "Docker", width: 100 },
   { src: "/Skills/kube.png", alt: "Kubernetes", width: 150 },
   { src: "/Skills/vercel.png", alt: "Vercel", width: 150 },
 ];
 
-const ExtraSkillArray = [
+const ExtraSkillArray: SkillObj[] = [
   { src: "/Skills/git.png", alt: "Git", width: 130 },
   { src: "/Skills/vscode.png", alt: "VScode", width: 150 },
   { src: "/Skills/postman.jpg", alt: "Postman", width: 150 },
@@ -65,10 +73,10 @@ const Skill = () => {
           viewport={{ once: true }}
         >
           <JobCard>
-            <Jobtitle>Front-End</Jobtitle>
+            <Jobtitle>{`Front-End`}</Jobtitle>
             {/* Grid Container */}
             <GridContainer>
-              {gridFrontSkillArray.map((skill) => {
+              {gridFrontSkillArray.map((skill: SkillObj) => {
                 const { src, alt, width, height } = skill;
                 return (
                   <motion.div
@@ -89,7 +97,7 @@ const Skill = () => {
               })}
             </GridContainer>
 
-            {FrontSkillArray.map((skill) => {
+            {FrontSkillArray.map((skill: SkillObj) => {
               const { src, alt, width } = skill;
               return (
                 <motion.div
@@ -124,8 +132,8 @@ const Skill = () => {
         >
           <ColumnContainer>
             <JobCard>
-              <Jobtitle>Back-End</Jobtitle>
-              {BackSkillArray.map((skill) => {
+              <Jobtitle>{`Back-End`}</Jobtitle>
+              {BackSkillArray.map((skill: SkillObj) => {
                 const { src, alt, width } = skill;
                 return (
                   <motion.div
@@ -152,9 +160,9 @@ const Skill = () => {
             </JobCard>
             {/* Deploy Job Card */}
             <JobCard>
-              <Jobtitle>Deployment</Jobtitle>
+              <Jobtitle>{`Deployment`}</Jobtitle>
               {/* Grid Container */}
-              {DeploySkillArray.map((skill) => {
+              {DeploySkillArray.map((skill: SkillObj) => {
                 const { src, alt, width } = skill;
                 return (
                   <motion.div
@@ -189,8 +197,8 @@ const Skill = () => {
           viewport={{ once: true }}
         >
           <JobCard>
-            <Jobtitle>Extra</Jobtitle>
-            {ExtraSkillArray.map((skill) => {
+            <Jobtitle>{`Extra`}</Jobtitle>
+            {ExtraSkillArray.map((skill: SkillObj) => {
               const { src, alt, width } = skill;
               return (
                 <motion.div
