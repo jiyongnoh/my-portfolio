@@ -9,14 +9,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const kikleImgList = [
+const kikleImgList: string[] = [
   "/KikleEdu/main.png",
   "/KikleEdu/contents.png",
   "/KikleEdu/class.png",
   "/KikleEdu/classDetail.png",
 ];
 
-const soyesaiImgList = [
+const soyesaiImgList: string[] = [
   "/SoyesAI/5761024_1.png",
   "/SoyesAI/5761024_2.png",
   "/SoyesAI/5761024_3.png",
@@ -25,10 +25,10 @@ const soyesaiImgList = [
   "/SoyesAI/5761024_6.png",
 ];
 
-interface CarouselType {
+type CarouselType = {
   type: string;
   isOpen: boolean;
-}
+};
 
 const Carousel = ({ type, isOpen }: CarouselType) => {
   return (
@@ -50,7 +50,7 @@ const Carousel = ({ type, isOpen }: CarouselType) => {
         loop={true}
       >
         {type === "kikle"
-          ? kikleImgList.map((url, index) => {
+          ? kikleImgList.map((url: string, index: number) => {
               return (
                 <SwiperSlide key={url}>
                   <Image
@@ -67,7 +67,7 @@ const Carousel = ({ type, isOpen }: CarouselType) => {
                 </SwiperSlide>
               );
             })
-          : soyesaiImgList.map((url, index) => {
+          : soyesaiImgList.map((url: string, index: number) => {
               return (
                 <SwiperSlide key={url}>
                   <Image

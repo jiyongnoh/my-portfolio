@@ -7,14 +7,20 @@ import { useEffect, useState } from "react";
 
 import Carousel from "./Carousel";
 
-const kikleDescripionList = [
+// TMI 객체 타입 설정
+type TmiObj = {
+  description: string;
+  tmiUrl?: string;
+};
+
+const kikleDescripionList: string[] = [
   "키클 에듀는 회사 소속 강사들을 위한 수업 매칭, 강사 스케줄 등을 통합 관리하는 앱 서비스입니다",
   "기획(1인) + 디자인(1인) + 개발(1인) 총 3인에서 진행했습니다",
   "강사들에게 음원, 영상과 같은 강의에 필요한 자료를 제공하고, 강의를 희망하는 기관을 대상으로 회사를 소개하기 위한 목적으로 제작되었습니다",
   "요구사항 분석부터 설계, 개발, 유지보수까지 모든 과정을 주도했던 만큼 책임감을 가지고 참여했습니다",
 ];
 
-const kikleTmiList = [
+const kikleTmiList: TmiObj[] = [
   { description: "Front-End: Next 13 Page Router 사용 + Vercel 배포" },
   {
     description:
@@ -51,18 +57,17 @@ const kikleTmiList = [
   { description: "검수 시트를 활용하여 오류 수정, 개선, 고도화 작업 지속 중" },
 ];
 
-const soyeaiDescripionList = [
+const soyeaiDescripionList: string[] = [
   "소예아이는 심리 검사 및 상담 결과에 따라 맞춤형 컨텐츠를 제공하는 아동 청소년 멘탈케어 솔루션 서비스입니다",
   "기획(1인) + 디자인(1인) + FE(1인) + BE(1인) 총 4인에서 진행했고 BE 개발자로 참여했습니다",
   "Unity 개발자와의 협업을 통해 브라우저가 아닌 환경에서 데이터를 주고받는 경험을 할 수 있었습니다",
   "OpenAI API 기반의 상담 프로그램을 만들면서 Prompt Engineering을 접했고, LLM 모델에게 명령하는 방식을 보다 더 깊이 탐구할 수 있었습니다",
 ];
 
-const soyeaiTmiList = [
+const soyeaiTmiList: TmiObj[] = [
   {
     description:
       "AI 페르소나 적용을 위해 프롬프트 엔지니어링 기반의 명령 프롬프트 구현 및 적용",
-    tmiUrl: "",
   },
   {
     description:
@@ -256,7 +261,7 @@ const Project = () => {
               <RowContainer>
                 <TmiColumnContainer>
                   <DescriptionContainer>
-                    {kikleTmiList.map((el) => {
+                    {kikleTmiList.map((el: TmiObj) => {
                       const { description, tmiUrl } = el;
                       return (
                         <li key={description}>
@@ -412,7 +417,7 @@ const Project = () => {
               <RowContainer>
                 <TmiColumnContainer>
                   <DescriptionContainer>
-                    {soyeaiTmiList.map((el) => {
+                    {soyeaiTmiList.map((el: TmiObj) => {
                       const { description, tmiUrl } = el;
                       return (
                         <li key={description}>
