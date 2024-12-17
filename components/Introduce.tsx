@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const mentList = [
+const mentList: string[] = [
   "쌓아가는 개발자 노지용입니다",
   "협업과 커뮤니케이션을 중요하게 여기며, 상대방의 관점에서 문제를 바라보고 해결하려 노력합니다",
   "효과적인 협업은 상대방의 생각을 충분히 이해하는 것에서 시작된다고 믿습니다",
@@ -11,7 +11,7 @@ const mentList = [
 ];
 
 const Introduce = () => {
-  const scrollToPosition = (position: number) => {
+  const scrollToPosition = (position: number): void => {
     window.scrollTo({
       top: position, // 이동할 y 좌표
       behavior: "smooth", // 스크롤 애니메이션
@@ -19,7 +19,7 @@ const Introduce = () => {
   };
   return (
     <IntroContainer>
-      {mentList.map((ment, index) => {
+      {mentList.map((ment: string, index: number) => {
         return (
           <motion.div
             key={ment}
