@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   },
 };
 
+// 배포 Test용 주석 추가
+
 export const revalidate = 0; // SSG 활성화
 
 export default function Home() {
