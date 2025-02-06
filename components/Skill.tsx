@@ -16,7 +16,12 @@ const gridFrontSkillArray: SkillObj[] = [
   { src: "/Skills/css.png", alt: "CSS", width: 65, height: 90 },
   { src: "/Skills/js.png", alt: "Javascript", width: 65, height: 90 },
   { src: "/Skills/ts.svg", alt: "Typescript", width: 90, height: 90 },
-  { src: "/Skills/sc.png", alt: "Styled-Component", width: 90, height: 90 },
+  {
+    src: "/Skills/sc.png",
+    alt: "Styled-Component",
+    width: 90,
+    height: 90,
+  },
   { src: "/Skills/recoil.svg", alt: "Recoil", width: 90, height: 90 },
 ];
 
