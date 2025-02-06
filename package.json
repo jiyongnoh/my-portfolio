@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start -H 0.0.0.0",
     "lint": "next lint",
-    "docker": "docker build -t my-portfolio . && docker tag my-porfolio-docker-image soyesnjy/my-portfolio:latest && docker push soyesnjy/my-portfolio:latest"
+    "docker": "docker build -t njy95000/my-portfolio:latest . && docker push njy95000/my-portfolio:latest"
   },
   "dependencies": {
     "motion": "^12.0.0-alpha.2",
