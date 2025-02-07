@@ -13,13 +13,10 @@ jobs:
       # 1. Repository에서 최신 코드를 체크아웃합니다.
       - name: Checkout code
         uses: actions/checkout@v2
-        # 이전에 동일한 checkout 작업이 있었다면, 중복 부분을 주석 처리하세요.
-        # uses: actions/checkout@v2
 
       # 2. Docker 이미지를 빌드합니다.
       - name: Build Docker image
-        run: |
-          docker build -t njy95000/my-portfolio:latest .
+        run: docker build -t njy95000/my-portfolio:latest .
 
       # 3. Docker Hub에 로그인합니다.
       - name: Log in to Docker Hub
@@ -27,8 +24,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          # 이전 로그인 절차가 이미 구현되어 있다면, 중복 코드를 주석 처리 가능:
-          # uses: docker/login-action@v1
 
       # 4. 빌드한 Docker 이미지를 Docker Hub에 Push합니다.
       - name: Push Docker image to Docker Hub
