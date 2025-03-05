@@ -29,10 +29,10 @@ export default function Home() {
       <About />
       {/* Skill Section */}
       <Skill />
-      {/* Archiving Section */}
-      <Archiving />
       {/* Project Section */}
       <Project />
+      {/* Archiving Section */}
+      <Archiving />
     </Main>
   );
 }

@@ -28,9 +28,10 @@ const soyesaiImgList: string[] = [
 type CarouselType = {
   type: string;
   isOpen: boolean;
+  mobileFlag: boolean;
 };
 
-const Carousel = ({ type, isOpen }: CarouselType) => {
+const Carousel = ({ type, isOpen, mobileFlag }: CarouselType) => {
   return (
     <div
       style={{
@@ -43,8 +44,7 @@ const Carousel = ({ type, isOpen }: CarouselType) => {
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={0}
         slidesPerView={2}
-        slidesPerGroup={1}
-        navigation
+        slidesPerGroup={mobileFlag ? 1 : 2}
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000 }}
         loop={true}

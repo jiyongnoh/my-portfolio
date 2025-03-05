@@ -37,17 +37,17 @@ const BackSkillArray: SkillObj[] = [
 ];
 
 const DeploySkillArray: SkillObj[] = [
-  { src: "/Skills/aws.png", alt: "AWS", width: 130 },
+  // { src: "/Skills/aws.png", alt: "AWS", width: 130 },
   { src: "/Skills/docker.png", alt: "Docker", width: 100 },
   { src: "/Skills/kube.png", alt: "Kubernetes", width: 150 },
   { src: "/Skills/vercel.png", alt: "Vercel", width: 150 },
 ];
 
 const ExtraSkillArray: SkillObj[] = [
-  { src: "/Skills/git.png", alt: "Git", width: 130 },
-  { src: "/Skills/vscode.png", alt: "VScode", width: 150 },
+  // { src: "/Skills/git.png", alt: "Git", width: 130 },
+  // { src: "/Skills/vscode.png", alt: "VScode", width: 150 },
   { src: "/Skills/postman.jpg", alt: "Postman", width: 150 },
-  // { src: "/Skills/slack.png", alt: "Slack", width: 150 },
+  { src: "/Skills/slack.png", alt: "Slack", width: 150 },
   { src: "/Skills/figma.408d0f4e.png", alt: "Figma", width: 180 },
 ];
 
@@ -245,6 +245,10 @@ const SkillContainer = styled.div`
   align-items: center;
 
   gap: 3rem;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const JobContainer = styled.div`
@@ -270,10 +274,8 @@ const GridContainer = styled.div`
 
   @media (max-width: 1080px) {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2rem;
   }
 `;
 
@@ -305,6 +307,7 @@ const JobCard = styled.div`
 
   @media (max-width: 1080px) {
     min-width: 350px;
+    padding: 0.7rem;
   }
 `;
 

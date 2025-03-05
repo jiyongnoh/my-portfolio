@@ -14,13 +14,16 @@ type TmiObj = {
 };
 
 const kikleDescripionList: string[] = [
-  "키클 에듀는 회사 소속 강사들을 위한 수업 매칭, 강사 스케줄 등을 통합 관리하는 앱 서비스입니다",
   "기획(1인) + 디자인(1인) + 개발(1인) 총 3인에서 진행했습니다",
   "강사들에게 음원, 영상과 같은 강의에 필요한 자료를 제공하고, 강의를 희망하는 기관을 대상으로 회사를 소개하기 위한 목적으로 제작되었습니다",
   "요구사항 분석부터 설계, 개발, 유지보수까지 모든 과정을 주도했던 만큼 책임감을 가지고 참여했습니다",
 ];
 
 const kikleTmiList: TmiObj[] = [
+  {
+    description:
+      "키클 에듀는 회사 소속 강사들을 위한 수업 매칭, 강사 스케줄 등을 통합 관리하는 앱 서비스입니다",
+  },
   { description: "Front-End: Next 13 Page Router 사용 + Vercel 배포" },
   {
     description:
@@ -58,13 +61,16 @@ const kikleTmiList: TmiObj[] = [
 ];
 
 const soyeaiDescripionList: string[] = [
-  "소예아이는 심리 검사 및 상담 결과에 따라 맞춤형 컨텐츠를 제공하는 아동 청소년 멘탈케어 솔루션 서비스입니다",
   "기획(1인) + 디자인(1인) + FE(1인) + BE(1인) 총 4인에서 진행했고 BE 개발자로 참여했습니다",
   "Unity 개발자와의 협업을 통해 브라우저가 아닌 환경에서 데이터를 주고받는 경험을 할 수 있었습니다",
   "OpenAI API 기반의 상담 프로그램을 만들면서 Prompt Engineering을 접했고, LLM 모델에게 명령하는 방식을 보다 더 깊이 탐구할 수 있었습니다",
 ];
 
 const soyeaiTmiList: TmiObj[] = [
+  {
+    description:
+      "소예아이는 심리 검사 및 상담 결과에 따라 맞춤형 컨텐츠를 제공하는 아동 청소년 멘탈케어 솔루션 서비스입니다",
+  },
   {
     description:
       "AI 페르소나 적용을 위해 프롬프트 엔지니어링 기반의 명령 프롬프트 구현 및 적용",
@@ -115,7 +121,6 @@ const Project = () => {
           style={{
             maxWidth: "100%",
             height: "auto",
-            cursor: "pointer",
             opacity: "0.5",
           }}
         />
@@ -129,7 +134,7 @@ const Project = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
           style={{
-            width: mobileFlag ? "90%" : "66%",
+            width: mobileFlag ? "98%" : "66%",
             height: mobileFlag ? "900px" : "700px",
             perspective: "2000px", // 3D 효과를 위해 perspective 설정
             // overflow: "hidden",
@@ -180,15 +185,36 @@ const Project = () => {
                   {`TMI`}
                 </TmiButton>
               </motion.div>
-              <ProjectTitle>키클 에듀</ProjectTitle>
-              <ProjectSubTitle>2024.7 - 2024.10</ProjectSubTitle>
+              <ProjectTitle>{`키클 에듀`}</ProjectTitle>
+              <ProjectSubTitle>{`2024.7 - 2024.10`}</ProjectSubTitle>
               <RowContainer>
-                <Carousel type="kikle" isOpen={isOpen} />
+                <Carousel
+                  type="kikle"
+                  isOpen={isOpen}
+                  mobileFlag={mobileFlag}
+                />
                 <ColumnContainer>
                   <DescriptionContainer>
-                    {kikleDescripionList.map((el: string) => {
-                      return <Descripion key={el}>{el}</Descripion>;
+                    {kikleTmiList.map((el: TmiObj) => {
+                      const { description, tmiUrl } = el;
+                      if (tmiUrl)
+                        return (
+                          <TmiUrlA
+                            key={description}
+                            href={tmiUrl}
+                            target="blank"
+                          >
+                            {description}
+                          </TmiUrlA>
+                        );
+                      else
+                        return (
+                          <Descripion key={description}>
+                            {description}
+                          </Descripion>
+                        );
                     })}
+                    {/* <FooterSubTitle>{`( *해당 색상은 클릭 시 블로그 포스팅으로 이동합니다 )`}</FooterSubTitle> */}
                   </DescriptionContainer>
                   <FooterContainer>
                     <FooterRowContainer>
@@ -261,22 +287,10 @@ const Project = () => {
               <RowContainer>
                 <TmiColumnContainer>
                   <DescriptionContainer>
-                    {kikleTmiList.map((el: TmiObj) => {
-                      const { description, tmiUrl } = el;
-                      return (
-                        <li key={description}>
-                          {tmiUrl ? (
-                            <TmiUrlA href={tmiUrl} target="blank">
-                              {description}
-                            </TmiUrlA>
-                          ) : (
-                            <Descripion>{description}</Descripion>
-                          )}
-                        </li>
-                      );
+                    {kikleDescripionList.map((el: string) => {
+                      return <Descripion key={el}>{el}</Descripion>;
                     })}
                   </DescriptionContainer>
-                  <FooterSubTitle>{`( *해당 색상은 클릭 시 블로그 포스팅으로 이동합니다 )`}</FooterSubTitle>
                 </TmiColumnContainer>
               </RowContainer>
             </motion.div>
@@ -290,7 +304,7 @@ const Project = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
           style={{
-            width: mobileFlag ? "90%" : "66%",
+            width: mobileFlag ? "98%" : "66%",
             height: mobileFlag ? "900px" : "700px",
             perspective: "2000px", // 3D 효과를 위해 perspective 설정
             // overflow: "hidden",
@@ -344,11 +358,31 @@ const Project = () => {
               <ProjectTitle>소예 아이</ProjectTitle>
               <ProjectSubTitle>2024.4 - 2024.11</ProjectSubTitle>
               <RowContainer>
-                <Carousel type="soyesAI" isOpen={isOpen2} />
+                <Carousel
+                  type="soyesAI"
+                  isOpen={isOpen2}
+                  mobileFlag={mobileFlag}
+                />
                 <ColumnContainer>
                   <DescriptionContainer>
-                    {soyeaiDescripionList.map((el: string) => {
-                      return <Descripion key={el}>{el}</Descripion>;
+                    {soyeaiTmiList.map((el: TmiObj) => {
+                      const { description, tmiUrl } = el;
+                      if (tmiUrl)
+                        return (
+                          <TmiUrlA
+                            key={description}
+                            href={tmiUrl}
+                            target="blank"
+                          >
+                            {description}
+                          </TmiUrlA>
+                        );
+                      else
+                        return (
+                          <Descripion key={description}>
+                            {description}
+                          </Descripion>
+                        );
                     })}
                   </DescriptionContainer>
                   <FooterContainer>
@@ -417,19 +451,8 @@ const Project = () => {
               <RowContainer>
                 <TmiColumnContainer>
                   <DescriptionContainer>
-                    {soyeaiTmiList.map((el: TmiObj) => {
-                      const { description, tmiUrl } = el;
-                      return (
-                        <li key={description}>
-                          {tmiUrl ? (
-                            <TmiUrlA href={tmiUrl} target="blank">
-                              {description}
-                            </TmiUrlA>
-                          ) : (
-                            <Descripion>{description}</Descripion>
-                          )}
-                        </li>
-                      );
+                    {soyeaiDescripionList.map((el: string) => {
+                      return <Descripion key={el}>{el}</Descripion>;
                     })}
                   </DescriptionContainer>
                 </TmiColumnContainer>
@@ -487,7 +510,7 @@ const Title = styled.span`
 `;
 
 const Descripion = styled.span`
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
   font-family: sans-serif;
   color: black;
@@ -497,7 +520,7 @@ const Descripion = styled.span`
   user-select: none;
 
   @media (max-width: 1080px) {
-    font-size: 13px;
+    font-size: 11px;
   }
 `;
 
@@ -508,6 +531,10 @@ const ProjectTitle = styled.span`
   color: black;
 
   user-select: none;
+
+  @media (max-width: 1080px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ProjectSubTitle = styled.span`
@@ -543,7 +570,11 @@ const DescriptionContainer = styled.ul`
   justify-content: center;
   align-items: flex-start;
 
-  gap: 1.5rem;
+  gap: 1rem;
+
+  @media (max-width: 1080px) {
+    margin-top: 1rem;
+  }
 `;
 
 const ColumnContainer = styled.div`
@@ -578,10 +609,14 @@ const FooterContainer = styled.div`
 `;
 
 const FooterRowContainer = styled.div`
-  width: 100%;
+  width: 320px;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 1080px) {
+    width: 100%;
+  }
 `;
 
 const FooterTagTitle = styled.span`
@@ -593,15 +628,15 @@ const FooterTagTitle = styled.span`
   user-select: none;
 `;
 
-const FooterSubTitle = styled.span`
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: #3870ff;
+// const FooterSubTitle = styled.span`
+//   margin-top: 1rem;
+//   font-size: 0.9rem;
+//   font-weight: bold;
+//   font-family: sans-serif;
+//   color: #3870ff;
 
-  user-select: none;
-`;
+//   user-select: none;
+// `;
 
 const UrlA = styled.a`
   font-size: 1rem;
@@ -610,10 +645,14 @@ const UrlA = styled.a`
   color: #7cb8e6;
 
   user-select: none;
+
+  @media (max-width: 1080px) {
+    font-size: 14px;
+  }
 `;
 
 const TmiUrlA = styled.a`
-  font-size: 1rem;
+  font-size: 12px;
   font-weight: bold;
   font-family: sans-serif;
   color: #3870ff;
@@ -621,7 +660,7 @@ const TmiUrlA = styled.a`
   user-select: none;
 
   @media (max-width: 1080px) {
-    font-size: 13px;
+    font-size: 11px;
   }
 `;
 
@@ -629,12 +668,12 @@ const SkillContainer = styled.div`
   width: 100%;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.2rem;
 `;
 
 const SkillTag = styled.div`
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   font-family: sans-serif;
 
@@ -645,6 +684,10 @@ const SkillTag = styled.div`
   border-radius: 20px;
 
   user-select: none;
+
+  @media (max-width: 1080px) {
+    font-size: 11px;
+  }
 `;
 
 const TmiButton = styled.button`
